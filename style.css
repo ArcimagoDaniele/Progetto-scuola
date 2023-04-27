@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    background-image: url('immagini_progetto/backgound.jpg');
 }
 .Header{
     margin: 0;
@@ -19,3 +20,29 @@ body{
     margin: 0.5rem;
     background-color: blue;
 }
+.Footer{
+    margin: 0.5rem 0 0 0 ;
+    padding: 0;
+    background-color: rgb(82, 98, 240);
+    width: 100%;
+    height: 50px
+}
+
+@media only screen and (min-width: 1000px)  {
+    .Consigliati{
+        flex-direction: row;
+    }
+
+    .Lista{
+        width: 25%;
+    }
+
+    .carousel{
+        width: 70%;
+    }
+    .Carousel-Wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}   
