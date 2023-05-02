@@ -1,17 +1,111 @@
 body{
     margin: 0;
     background-image: url('immagini_progetto/backgound.jpg');
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+a{
+    color: grey; 
+}
+
 .Header{
+    background-color: #d4d4d4;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.Header ul{
     margin: 0;
     padding: 0;
-    background-color: rgb(82, 98, 240);
-    width: 100%;
-    height: 50px;
+    list-style: none;
+    overflow: hidden;
+    background-color: #d4d4d4;
 }
+.Header ul a{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+.Header ul a:hover{
+    background-color: #d4d4d4;
+}
+.Header .logo{
+    float: left;
+    font-size: 25px;
+    padding: 10px 20px;
+}
+.Header .menu{
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.Header .menu-icon{
+    padding: 28px 20px;
+    position : relative;    
+    float: right;
+    cursor: pointer;
+}
+
+.Header .menu-icon .nav-icon{
+    background-color: grey;
+    display: block;
+    width: 18px;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+}
+
+.Header .menu-icon .nav-icon::before,
+.Header .menu-icon .nav-icon::after{
+    background-color: grey;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    transition:all .2s ease-out;    
+    position: absolute;
+}
+
+.Header .menu-icon .nav-icon::before{
+    top: 5px;
+}
+
+.Header .menu-icon .nav-icon::after{
+    top: -5px;
+}
+
+.Header .menu-btn{
+    display: none;
+}
+
+.Header .menu-btn:checked ~ .menu{
+    max-height: 240px   ;
+}
+
+.Header .menu-btn:checked ~ .menu-icon .nav-icon{
+    background-color: transparent;
+}
+
+.Header .menu-btn:checked ~ .menu-icon .nav-icon::before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.Header .menu-btn:checked ~ .menu-icon .nav-icon::after{
+    transform: rotate(45deg);
+    top: 0;
+}
+
+i{
+    font-size: 2rem;
+}
+
 .Consigliati{
     display: flex;
     flex-direction: column;
+    padding-top: 70px;
 }
 
 .Lista{
@@ -21,13 +115,17 @@ body{
     background-color: blue;
 }
 .Footer{
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
     margin: 0.5rem 0 0 0 ;
     padding: 0;
-    background-color: rgb(82, 98, 240);
+    background-color: #d4d4d4;
     width: 100%;
     height: 50px
 }
-
+        /*Rendiamo adattivo il sito in modo che si veda bene anche da desktop*/
 @media only screen and (min-width: 1000px)  {
     .Consigliati{
         flex-direction: row;
